@@ -1,0 +1,45 @@
+{
+  "name": "pimodule-express-api",
+  "version": "1.0.0",
+  "description": "A node package to expose your UPS PIco HV3.0A/B/B+ HAT features on an express api",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomeHein/pimodule-express-api.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "api",
+    "UPS",
+    "raspberry",
+    "pi",
+    "PIco",
+    "HV3.0",
+    "HAT"
+  ],
+  "author": "Romain Cayzac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomeHein/pimodule-express-api/issues"
+  },
+  "homepage": "https://github.com/RomeHein/pimodule-express-api#readme",
+  "dependencies": {
+    "pimodule": "^1.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1",
+    "jest": "^24.9.0"
+  },
+  "standard": {
+    "globals": [
+      "PiModuleHelper"
+    ]
+  }
+}
