@@ -4,9 +4,9 @@ const fs = require('fs')
 const path = require('path')
 const cors = require('cors')
 const bcrypt = require('bcrypt')
-const PiModuleHelper = require('pimodule')
+// const PiModuleHelper = require('pimodule')
 
-global.PiModuleHelper = new PiModuleHelper(process.env.piModuleAddressType)
+// global.PiModuleHelper = new PiModuleHelper(process.env.piModuleAddressType)
 
 let app = express()
 app.use(bodyParser.json())
