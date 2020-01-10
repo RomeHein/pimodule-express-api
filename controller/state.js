@@ -3,6 +3,23 @@ const catchError = require('../catchError')
 module.exports = function (webserver) {
   console.log('✅ API state loaded')
 
+  /**
+ * @swagger
+ * /pimodule/state/{hardware}:
+ *   get:
+ *     summary: Get harware state
+ *     description: retrieve the current state of a specific PIco hardware.
+ *     tags:
+ *       - state
+ *     parameters:
+ *       - in: path
+ *         name: harware
+ *         type: string
+ *         required: true
+ *         description: Any of 'poweringmode', 'battery', 'temperature', 'auxilarypower', 'buzzer', 'relay', 'ledgreen', 'ledorange', 'ledblue', 'fanmode', 'fanspeed', 'fan'
+ *     responses:
+ *       200:
+ */
   webserver.get('/pimodule/state/:hardware?', async (req, res) => {
     try {
       let state
