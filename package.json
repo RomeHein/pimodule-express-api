@@ -4,7 +4,7 @@
   "description": "A node package to expose your UPS PIco HV3.0A/B/B+ HAT features on an express api",
   "main": "server.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
