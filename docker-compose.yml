@@ -1,0 +1,16 @@
+version: "3"
+services:
+  app:
+    image: pimodule-api
+    restart: always
+    privileged: true
+    user: root
+    ports:
+      - "${API_PORT:-7070}:${API_PORT:-7070}"
+    volumes:
+      - /sys:/sys
+      - /dev/mem:/dev/mem
+    environment:
+      apiPort: ${API_PORT:-7070}
+      piModuleAddressType: ${ADDRESS_TYPE:-default}
+      apiPassword: $PASS
