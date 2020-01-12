@@ -23,6 +23,7 @@ GET:
 - auxilary power state
 - leds state
 - fan running, fan mode, fan speed, fan temperature treshold
+
 SET: 
 - shutdown timer, stop shutdown
 - powering mode (battery or power)
@@ -116,6 +117,7 @@ Three env variables are available:
 - ADDRESS_TYPE: define addresses that should be uses by the UPS PIco HV3.0A/B/B+ HAT. Three are availble: 'default', 'alternate', 'noRtc'. If you don't know what I2C means, this variable should not be used
 - PASS: if you want to secure slightly your api, you can provide a pass. Your non-hashed password should be used with env variable PASS. The hashed pass (token) should be used when requests are made to the api, in the Authorization header. The server will just make a quick `bcrypt.compare` check before reading any incoming requests.
 The token will be print in the log of the server. You can of course use any bcrypt online generator.
+Note that any person who has access to your local network could see your header and find your token. If you really want to secure this api you'll need a reverse proxy like nginx that will handle https requests.
 
 ```
 PORT=8080 ADDRESS_TYPE=alternate HASHED_PASSED=$2y$12$IaMsT4MWiLkPI1IUVtO0GuDHoDxuh4RllAwGcaz7KFnKGtvbJa22m docker-compose up -d

@@ -4,9 +4,9 @@ const fs = require('fs')
 const path = require('path')
 const cors = require('cors')
 const bcrypt = require('bcrypt')
-// const PiModuleHelper = require('pimodule')
+const PiModuleHelper = require('pimodule')
 
-// global.PiModuleHelper = new PiModuleHelper(process.env.piModuleAddressType)
+global.PiModuleHelper = new PiModuleHelper(process.env.piModuleAddressType)
 
 let app = express()
 app.use(bodyParser.json())
@@ -15,7 +15,7 @@ app.use(express.static('public'))
 
 app.use(cors({
   origin: true,
-  methods: ['GET', 'POST', 'OPTIONS', 'PATCH', 'PUT'],
+  methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }))
 

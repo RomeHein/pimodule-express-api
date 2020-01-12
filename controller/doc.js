@@ -41,7 +41,7 @@ module.exports = function (webserver) {
         </style>
       </head>
       <body>
-        <redoc spec-url='http://localhost:${process.env.apiPort || 7070}/swagger.json' expand-responses="all"></redoc>
+        <redoc spec-url='http://${req.headers.host}/swagger.json' expand-responses="all"></redoc>
         <script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
       </body>
     </html>`)
