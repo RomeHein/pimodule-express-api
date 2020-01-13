@@ -54,8 +54,7 @@ module.exports = function (webserver) {
       } else {
         state = await PiModuleHelper.piModuleIsRunningProperly()
       }
-
-      res.status(200).send(state)
+      res.json(state)
     } catch (err) {
       catchError(res, err)
     }
