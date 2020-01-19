@@ -27,20 +27,20 @@ module.exports = function (webserver) {
     try {
       switch (req.params.hardware) {
         case 'auxilarypower':
-          await PiModuleHelper.switchBackedAuxilaryPower(req.params.on)
+          await PiModuleHelper.switchBackedAuxilaryPower(+req.params.on)
           break
         case 'buzzer':
-          await PiModuleHelper.switchBuzzer(req.params.on)
+          await PiModuleHelper.switchBuzzer(+req.params.on)
           break
         case 'relay':
-          await PiModuleHelper.switchBiStableRelay(req.params.on)
+          await PiModuleHelper.switchBiStableRelay(+req.params.on)
           break
         case 'ledorange': case 'ledgreen': case 'ledblue':
-          await PiModuleHelper.switchLed(req.params.hardware.substring(3), req.params.on)
+          await PiModuleHelper.switchLed(req.params.hardware.substring(3), +req.params.on)
           break
         default:
           // Let pimodule helper handle errors
-          await PiModuleHelper.switch(req.params.hardware, req.params.on)
+          await PiModuleHelper.switch(req.params.hardware, +req.params.on)
       }
       res.sendStatus(200)
     } catch (err) {
